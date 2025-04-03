@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro Vida Peniel</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="https://via.placeholder.com/32x32.png?text=CVP">
+    <!-- Fuentes de Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Enlace al CSS -->
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <!-- Carrusel de fondo -->
+    <div class="background-carousel">
+        <div class="carousel-slide">
+            <img src="Imgs/IMG-20250323-WA0004.jpg" alt="Foto 2">
+                <img src="Imgs/IMG-20250323-WA0005.jpg" alt="Foto 2">
+            <img src="Imgs/IMG-20250323-WA0006.jpg" alt="Foto 3">
+            <img src="Imgs/IMG-20250323-WA0008.jpg" alt="Foto 3">
+            <img src="Imgs/IMG-20250323-WA0009.jpg" alt="Foto 3">
+            <img src="Imgs/IMG-20250323-WA0010.jpg" alt="Foto 3">
+            <img src="Imgs/IMG-20250323-WA0011.jpg" alt="Foto 3">
+            <img src="Imgs/IMG-20250323-WA0013.jpg" alt="Foto 3">
+            <img src="Imgs/IMG-20250323-WA0014.jpg" alt="Foto 3">
+            <img src="Imgs/IMG-20250323-WA0016.jpg" alt="Foto 3">
+        </div>
+    </div>
+
+    <!-- Barra de navegación -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#eventos">Eventos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenido principal -->
+    <div class="container">
+        <div class="text-background">
+            <h1 class="title">CENTRO VIDA <br> PENIEL</h1>
+            
+        </div>
+    </div>
+
+    <!-- JavaScript para el carrusel -->
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide img');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.opacity = i === index ? '1' : '0';
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        // Mostrar la primera imagen
+        showSlide(currentSlide);
+
+        // Cambiar imagen cada 5 segundos
+        setInterval(nextSlide, 5000);
+    </script>
+</body>
+</html>
